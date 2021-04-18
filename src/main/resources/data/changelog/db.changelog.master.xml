@@ -5,9 +5,11 @@
         xmlns:pro="http://www.liquibase.org/xml/ns/pro"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd
       http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.2.xsd">
+    <property name="uuid_type" value="uuid" dbms="h2"/>
+    <property name="uuid_function" value="RANDOM_UUID()" dbms="h2"/>
     <changeSet author="platunov.vv" id="2013-03-02-initial-schema-import-1">
         <createTable tableName="tb_user">
-            <column  name="id" type="uuid">
+            <column  name="id"  type="${uuid_type}" defaultValueComputed="${uuid_function}">
                 <constraints nullable="false" unique="true" />
             </column>
             <column name="firstname" type="VARCHAR(255)"/>
