@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 @RestController
+@RequestMapping("/user")
 public class TbUserController {
 
     private UserService userService;
