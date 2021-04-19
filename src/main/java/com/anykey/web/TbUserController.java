@@ -21,17 +21,14 @@ public class TbUserController {
     }
 
     @RequestMapping("/getAll")
-    public List<User> test(){
+    public List<User> getUsers() {
         return userService.findAll();
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.PUT)
-    public User newUser(@RequestBody User user){
-       Random random = new Random();
-      //  User user = new User();
-      user.setFirstName(name);
-        user.setId(String.valueOf(random.nextInt()));
-        return userService.save(user);
+    public String newUser(@RequestBody User user) {
+        User saved = userService.save(user);
+        return saved.getId();
     }
 
 
