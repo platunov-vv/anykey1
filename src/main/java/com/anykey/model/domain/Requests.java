@@ -1,9 +1,10 @@
 package com.anykey.model.domain;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+
 
 @Data
 @Entity

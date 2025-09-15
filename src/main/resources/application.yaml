@@ -55,4 +55,5 @@ spring:
 #    driverClassName: org.h2.Driver
 server:
   port: 8081
-
+application-description: Описание вашего приложения
+application-version: 0.0.1
