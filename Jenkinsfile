@@ -3,7 +3,7 @@ pipeline {
 
     environment {
 
-        IMAGE_NAME = 'your-dockerhub-username/your-app'
+        IMAGE_NAME = 'platunov17/platunov'
         IMAGE_TAG = 'latest'
 
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials-id'
@@ -42,7 +42,7 @@ pipeline {
             }
         }
 
-        stage('Pubat Docker Image') {
+        stage('Push Docker Image') {
             steps {
 
                 script {
