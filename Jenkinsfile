@@ -30,7 +30,7 @@ pipeline {
 
                 script {
 
-                    docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                    def image =   docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
                 }
             }
         }
