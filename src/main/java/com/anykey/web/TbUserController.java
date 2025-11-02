@@ -38,11 +38,11 @@ public class TbUserController {
 
     }
 
-    /* @PutMapping("/{id}")
+    @PutMapping("/{id}")
    public String updateUser(@PathVariable String id, @RequestBody User user) {
         User saved = userService.save(user);
         return saved.getId();
-    }*/
+    }
    /* public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody User updatedUser) {
         return updatedUser.findById(id)
                 .map(existingItem -> {
