@@ -58,7 +58,7 @@ pipeline {
 
                         script {
                              def img = docker.image("${IMAGE_NAME}:${IMAGE_TAG}")
-                             bat "docker run -p 8081:8081-d --name ${CONTAINER_NAME} ${IMAGE_NAME}:${IMAGE_TAG}"
+                             bat "docker run -d -p 8081:8081 --name ${CONTAINER_NAME} ${IMAGE_NAME}:${IMAGE_TAG}"
                         }
                     }
                 }
