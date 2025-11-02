@@ -59,6 +59,7 @@ public class TbUserController {
     @PostMapping(value = "/add")
     public UUID newUser(@Valid @RequestBody User user) {
         User saved = userService.save(user);
+        System.out.println("Привет, мир!");;
         return saved.getId();
     }
 
