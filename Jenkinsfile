@@ -21,7 +21,7 @@ pipeline {
         stage('Build') {
             steps {
 
-                bat 'mvn clean package -DskipTests'
+                bat 'chcp 65001 && mvn clean package -DskipTests'
             }
         }
 
