@@ -2,6 +2,8 @@ package com.anykey.model.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -21,6 +23,7 @@ public class User {
 
     @Column(name = "firstname")
     @NotNull
+    @Size(min = 2, max = 50, message = "Name should be between 2 and 50 characters")
     private String firstName;
 
     @Column(name = "lastname")
