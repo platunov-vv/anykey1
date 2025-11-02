@@ -5,6 +5,7 @@ pipeline {
 
         IMAGE_NAME = 'platunov17/platunov'
         IMAGE_TAG = 'latest'
+        CONTAINER_NAME = 'anykey'
 
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials-id'
     }
@@ -51,5 +52,15 @@ pipeline {
                 }
             }
         }
+
+         stage('Run Docker Image') {
+                    steps {
+
+                        script {
+                             def img = docker.image("${IMAGE_NAME}:${IMAGE_TAG}")
+                             bat "docker run -d --name ${CONTAINER_NAME} ${IMAGE_NAME}:${IMAGE_TAG}"
+                        }
+                    }
+                }
     }
 }
