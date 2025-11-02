@@ -15,14 +15,14 @@ pipeline {
                 // Клонируем репозиторий
                 checkout scm
                 // Или, если настроите вручную:
-                // sh 'git clone https://github.com/ваш-репозиторий.git'
+                // bat 'git clone https://github.com/ваш-репозиторий.git'
             }
         }
 
         stage('Build') {
             steps {
                 // Собираем проект с помощью Maven
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
 
@@ -39,16 +39,16 @@ pipeline {
         stage('Test') {
             steps {
                 // Запускаем тесты (если есть)
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
-        stage('Push Docker Image') {
+        stage('Pubat Docker Image') {
             steps {
                 // Отправляем образ на Docker Hub
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', "${DOCKERHUB_CREDENTIALS_ID}") {
-                        docker.image("${IMAGE_NAME}:${IMAGE_TAG}").push()
+                        docker.image("${IMAGE_NAME}:${IMAGE_TAG}").pubat()
                     }
                 }
             }
