@@ -46,10 +46,8 @@ pipeline {
             steps {
 
                 script {
-                  docker.withRegistry('https://registry.hub.docker.com', "${DOCKERHUB_CREDENTIALS_ID}") {
-                                        def img = docker.image("${IMAGE_NAME}:${IMAGE_TAG}")
-                                        img.push()
-                    }
+                     def img = docker.image("${IMAGE_NAME}:${IMAGE_TAG}")
+                                                         img.push()
                 }
             }
         }
