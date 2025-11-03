@@ -162,6 +162,7 @@
                         <groupId>io.qameta.allure</groupId>
                         <artifactId>allure-maven</artifactId>
                         <version>2.16.1</version> <!-- укажите актуальную версию -->
+
                     </plugin>
                     <!-- Может быть, есть другиеа плагины, связанные с сборкой/тестами -->
                 </plugins>

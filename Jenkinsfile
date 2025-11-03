@@ -21,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
 
-                bat 'mvn test -Pallure'
+                bat 'mvn clean test allure:report'
             }
         }
           stage('Generate Allure Report') {
