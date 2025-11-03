@@ -24,7 +24,12 @@ pipeline {
                 bat 'mvn test -Pallure'
             }
         }
-
+          stage('Generate Allure Report') {
+              steps {
+                  // Генерация HTML-отчета из результатов
+                  bat 'allure generate allure-results -o allure-report --clean'
+              }
+          }
         stage('Publish Allure Report') {
                     steps {
                         // публикация отчета
