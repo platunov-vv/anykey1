@@ -18,7 +18,12 @@ pipeline {
 
             }
         }
+   stage('Test') {
+            steps {
 
+                bat 'mvn test -Pallure'
+            }
+        }
         stage('Build') {
             steps {
 
@@ -36,12 +41,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
 
-                bat 'mvn test'
-            }
-        }
 
         stage('Push Docker Image') {
             steps {
