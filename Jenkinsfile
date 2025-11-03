@@ -6,7 +6,7 @@ pipeline {
         IMAGE_NAME = 'platunov17/platunov'
         IMAGE_TAG = 'latest'
         CONTAINER_NAME = 'anykey'
-
+        ALLURE_RESULTS = 'allure-results'
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials-id'
     }
 
@@ -22,6 +22,11 @@ pipeline {
             steps {
 
                 bat 'mvn test -Pallure'
+                 publishHTML target: [
+                                    reportDir: "${ALLURE_RESULTS}",       // папка с отчетом
+                                    reportFiles: 'index.html',        // стартовая страница
+                                    reportName: 'Allure Test Report'  // отображаемое имя
+                                ]
             }
         }
         stage('Build') {
