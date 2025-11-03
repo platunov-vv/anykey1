@@ -22,13 +22,18 @@ pipeline {
             steps {
 
                 bat 'mvn test -Pallure'
-                 publishHTML target: [
-                                    reportDir: "${ALLURE_RESULTS}",       // папка с отчетом
-                                    reportFiles: 'index.html',        // стартовая страница
-                                    reportName: 'Allure Test Report'  // отображаемое имя
-                                ]
-            }
+
         }
+      stage('Publish Allure Report') {
+                    steps {
+                        // публикация отчета
+                        publishHTML target: [
+                            reportDir: 'allure-report',       // папка с отчетом
+                            reportFiles: 'index.html',        // стартовая страница
+                            reportName: 'Allure Test Report'  // отображаемое имя
+                        ]
+                    }
+                }
         stage('Build') {
             steps {
 
