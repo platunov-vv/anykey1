@@ -107,8 +107,13 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
-            <version>2.13.8</version>
+            <version>2.16.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-maven</artifactId>
+            <version>2.16.1</version>
         </dependency>
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
@@ -147,4 +152,21 @@
 
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>allure</id>
+            <build>
+                <plugins>
+                    <!-- Плагин для генерации результатов Allure -->
+                    <plugin>
+                        <groupId>io.qameta.allure</groupId>
+                        <artifactId>allure-maven</artifactId>
+                        <version>2.16.1</version> <!-- укажите актуальную версию -->
+                    </plugin>
+                    <!-- Может быть, есть другиеа плагины, связанные с сборкой/тестами -->
+                </plugins>
+            </build>
+            <!-- Можно добавить дополнительные настройки, если нужно -->
+        </profile>
+    </profiles>
 </project>
