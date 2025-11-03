@@ -18,13 +18,14 @@ pipeline {
 
             }
         }
-   stage('Test') {
+        stage('Test') {
             steps {
 
                 bat 'mvn test -Pallure'
-
+            }
         }
-      stage('Publish Allure Report') {
+
+        stage('Publish Allure Report') {
                     steps {
                         // публикация отчета
                         publishHTML target: [
