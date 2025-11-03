@@ -27,7 +27,7 @@ pipeline {
           stage('Generate Allure Report') {
               steps {
                   // Генерация HTML-отчета из результатов
-                  bat 'allure generate allure-results --output allure-report'
+                  bat 'allure generate allure-results --clean --output allure-report'
               }
           }
         stage('Publish Allure Report') {
