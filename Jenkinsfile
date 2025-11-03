@@ -21,13 +21,13 @@ pipeline {
         stage('Test') {
             steps {
 
-                bat 'mvn clean test allure:report'
+                bat 'mvn clean test'
             }
         }
           stage('Generate Allure Report') {
               steps {
                   // Генерация HTML-отчета из результатов
-                  bat 'allure generate allure-results -o allure-report --clean'
+                  bat 'mvn allure:report'
               }
           }
         stage('Publish Allure Report') {
