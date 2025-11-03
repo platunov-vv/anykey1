@@ -27,7 +27,7 @@ pipeline {
           stage('Generate Allure Report') {
               steps {
                   // Генерация HTML-отчета из результатов
-                  bat 'mvn allure:report'
+                  bat 'mvn allure:report -Dallure.results.directory= C:/Program Files/Jenkins/agent/workspace/pipe/allure-results'
               }
           }
         stage('Publish Allure Report') {
