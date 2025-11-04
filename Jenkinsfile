@@ -21,8 +21,8 @@ pipeline {
         stage('Test') {
             steps {
 
-                bat 'mvn clean test'
-                bat 'mvn allure:report'
+                bat 'mvn clean verify'
+               // bat 'mvn allure:report'
             }
         }
 
