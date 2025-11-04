@@ -131,7 +131,7 @@
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <allure.results.directory>target/allure-results</allure.results.directory>
+                        <allure.results.directory>allure-results</allure.results.directory>
                     </systemPropertyVariables>
                     <parallel>methods</parallel>
                     <threadCount>5</threadCount>
