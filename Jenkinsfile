@@ -36,7 +36,7 @@ pipeline {
                         publishHTML target: [
                             reportDir: 'allure-report',       // папка с отчетом
                             reportFiles: 'index.html',        // стартовая страница
-                            reportName: 'Allure Test Report'  // отображаемое имя
+                            reportName: 'Allure отчет Report'  // отображаемое имя
                         ]
                     }
                 }
