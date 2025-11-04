@@ -85,7 +85,15 @@ pipeline {
      post {
             always {
                 // Используйте этот шаг для автоматической публикации отчета Allure
-                allure 'target/allure-results'
+                      allure([
+                               // Список путей к директориям с результатами Allure.
+                               // Можно указать несколько путей, если результаты разбросаны.
+                               results: [[path: 'target/allure-results']],
+                               // Имя конфигурации Allure Commandline, указанной в Global Tool Configuration
+                               commandline: 'Allure_2.x',
+                               // Политика создания отчета (например, ALWAYS, UNSTABLE, UNSUCCESSFUL)
+                               reportBuildPolicy: 'ALWAYS'
+                           ])
             }
         }
 
