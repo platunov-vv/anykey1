@@ -22,7 +22,7 @@ pipeline {
             steps {
 
                 bat 'mvn clean verify'
-                bat 'mvn allure:generate'
+               // bat 'mvn allure:report'
             }
         }
 
@@ -81,5 +81,10 @@ pipeline {
                         }
                     }
                 }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'target/site/allure-maven-plugin/**/*', fingerprint: true
+        }
     }
 }
