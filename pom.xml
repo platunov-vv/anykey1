@@ -129,8 +129,8 @@
                 <artifactId>allure-maven</artifactId>
                 <version>2.16.1</version>
                 <configuration>
-                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
-                   <reportDirectory>${project.build.directory}/allure-results</reportDirectory>
+                    <resultsDirectory>${project.build.directory}/target/allure-results</resultsDirectory>
+                   <reportDirectory>${project.build.directory}/target/allure-results</reportDirectory>
                 </configuration>
                 <executions>
                     <execution>
