@@ -130,7 +130,7 @@
                 <version>2.16.1</version>
                 <configuration>
                     <resultsDirectory>allure-results</resultsDirectory>
-                   <reportDirectory>allure-report</reportDirectory>
+                   <reportDirectory>target/allure-report</reportDirectory>
                 </configuration>
                 <executions>
                     <execution>
