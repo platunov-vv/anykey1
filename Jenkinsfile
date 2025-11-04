@@ -22,21 +22,23 @@ pipeline {
             steps {
 
                 bat 'mvn clean test'
+                bat 'mvn allure:report'
             }
         }
-          stage('Generate Allure Report') {
-              steps {
-                  // Генерация HTML-отчета из результатов
-                  bat 'mvn allure:report'
-              }
-          }
+
         stage('Publish Allure Report') {
                     steps {
                         // публикация отчета
                         publishHTML target: [
-                            reportDir: 'allure-report',       // папка с отчетом
-                            reportFiles: 'index.html',        // стартовая страница
-                            reportName: 'Allure отчет Report'  // отображаемое имя
+                            //reportDir: 'allure-report',       // папка с отчетом
+                           // reportFiles: 'index.html',        // стартовая страница
+                          //  reportName: 'Allure отчет Report'  // отображаемое имя
+                                 allowMissing: false,
+                                                alwaysLinkToLastBuild: true,
+                                                keepAll: true,
+                                                reportDir: 'target/site/allure-report', // Directory where reports are located
+                                                reportFiles: 'surefire-report.html', // The main HTML file
+                                                reportName: "Surefire Test Report"
                         ]
                     }
                 }
