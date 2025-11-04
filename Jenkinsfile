@@ -26,7 +26,7 @@ pipeline {
             }
         }
 
-        stage('Publish Allure Report') {
+        /* stage('Publish Allure Report') {
                     steps {
                         // публикация отчета
                         publishHTML target: [
@@ -41,7 +41,7 @@ pipeline {
                                                 reportName: "Surefire Test Report"
                         ]
                     }
-                }
+                } */
         stage('Build') {
             steps {
 
