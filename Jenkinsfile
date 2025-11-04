@@ -24,12 +24,12 @@ pipeline {
                 bat 'mvn clean test'
             }
         }
-       /*    stage('Generate Allure Report') {
+          stage('Generate Allure Report') {
               steps {
-                  // Генерация HTML-отчета из результатов
-               //   bat 'mvn allure:report -Dallure.results.directory=target/allure-results'
+                   Генерация HTML-отчета из результатов
+                  bat 'mvn allure:report'
               }
-          } */
+          }
         stage('Publish Allure Report') {
                     steps {
                         // публикация отчета
