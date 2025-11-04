@@ -82,9 +82,11 @@ pipeline {
                     }
                 }
     }
-    post {
-        always {
-            archiveArtifacts artifacts: 'target/site/allure-maven-plugin/**/*', fingerprint: true
+     post {
+            always {
+                // Используйте этот шаг для автоматической публикации отчета Allure
+                allure 'target/allure-results'
+            }
         }
-    }
+
 }
