@@ -22,7 +22,7 @@ pipeline {
             steps {
 
                 bat 'mvn clean verify'
-               // bat 'mvn allure:report'
+                bat 'mvn allure:generate'
             }
         }
 
