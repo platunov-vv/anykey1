@@ -36,7 +36,7 @@ pipeline {
                                  allowMissing: false,
                                                 alwaysLinkToLastBuild: true,
                                                 keepAll: true,
-                                                reportDir: 'target/site/allure-report', // Directory where reports are located
+                                                reportDir: 'target/allure-report', // Directory where reports are located
                                                 reportFiles: 'surefire-report.html', // The main HTML file
                                                 reportName: "Surefire Test Report"
                         ]
