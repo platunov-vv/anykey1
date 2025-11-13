@@ -25,7 +25,13 @@ pipeline {
                // bat 'mvn allure:report'
             }
         }
+         stage('Postman Test') {
+                    steps {
 
+                        bat 'mvn clean verify'
+                       // bat 'mvn allure:report'
+                    }
+                }
         /* stage('Publish Allure Report') {
                     steps {
                         // публикация отчета
