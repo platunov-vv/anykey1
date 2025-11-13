@@ -28,7 +28,7 @@ pipeline {
          stage('Postman Test') {
                     steps {
 
-                        bat 'mvn clean verify'
+                        bat 'newman run d:/anykey.postman_collection.json'
                        // bat 'mvn allure:report'
                     }
                 }
