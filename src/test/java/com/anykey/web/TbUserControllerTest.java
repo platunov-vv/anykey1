@@ -59,7 +59,7 @@ class TbUserControllerTest {
         // Тестирование случая когда пользователь найден
         when(userService.findById(userId1)).thenReturn(Optional.of(user1));
         var response = controller.getUserById(userId1);
-        assertEquals(400, response.getStatusCodeValue());
+        assertEquals(200, response.getStatusCodeValue());
         assertEquals(user1, response.getBody());
 
         // Тестирование случая, когда пользователь не найден
